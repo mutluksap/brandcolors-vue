@@ -129,6 +129,76 @@ html, body {
                 }
             }
         }
+        .main {
+            flex: 1;
+            .filter {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                position: fixed;
+                top: 0;
+                right: 0;
+                padding: 15px;
+                width: calc(100% - 420px);
+                border-bottom: solid 1px #e0e0e0;
+                .search-bar {
+                    position: relative;
+                    color: #607D8B;
+                    input {
+                        color: #607D8B;
+                        caret-color: #607D8B;
+                        display: block;
+                        height: 24px;
+                        padding-left: 30px;
+                    }
+                    i {
+                        position: absolute;
+                        left: 0;
+                        top: 5px;
+                        color: #607D8B;
+                    }
+                }
+                .collections {
+                    display: flex;
+                    align-items: center;
+                    .download-collections {
+                        padding-right: 14px;
+                        border-right: 1px solid #607d8b79;
+                        margin-right: 14px;
+                        ul {
+                            display: flex;
+                            align-items: center;
+                            li {
+                                a {
+                                    opacity: .33;
+                                    pointer-events: none;
+                                    margin-left: 15px;
+                                    color: #607D8B;
+                                    font-size: 18px;
+                                }
+                            }
+                            span {
+                                margin-left: 15px;
+                                color: #607D8B;
+                                font-weight: 300;
+                                font-size: 14px;
+                                user-select: none;
+                            }
+                        }
+                    }
+                    a.download-colors {
+                        color: #607D8B;
+                        i {
+                            margin-right: 8px;
+                        }
+                        span {
+                            font-weight: 300;
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 

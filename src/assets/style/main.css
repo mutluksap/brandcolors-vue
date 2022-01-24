@@ -165,4 +165,104 @@ html, body {
           transform: scale(1.15);
   z-index: 1;
 }
+
+#app .container .main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+#app .container .main .filter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 15px;
+  width: calc(100% - 420px);
+  border-bottom: solid 1px #e0e0e0;
+}
+
+#app .container .main .filter .search-bar {
+  position: relative;
+  color: #607D8B;
+}
+
+#app .container .main .filter .search-bar input {
+  color: #607D8B;
+  caret-color: #607D8B;
+  display: block;
+  height: 24px;
+  padding-left: 30px;
+}
+
+#app .container .main .filter .search-bar i {
+  position: absolute;
+  left: 0;
+  top: 5px;
+  color: #607D8B;
+}
+
+#app .container .main .filter .collections {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#app .container .main .filter .collections .download-collections {
+  padding-right: 14px;
+  border-right: 1px solid #607d8b79;
+  margin-right: 14px;
+}
+
+#app .container .main .filter .collections .download-collections ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#app .container .main .filter .collections .download-collections ul li a {
+  opacity: .33;
+  pointer-events: none;
+  margin-left: 15px;
+  color: #607D8B;
+  font-size: 18px;
+}
+
+#app .container .main .filter .collections .download-collections ul span {
+  margin-left: 15px;
+  color: #607D8B;
+  font-weight: 300;
+  font-size: 14px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+#app .container .main .filter .collections a.download-colors {
+  color: #607D8B;
+}
+
+#app .container .main .filter .collections a.download-colors i {
+  margin-right: 8px;
+}
+
+#app .container .main .filter .collections a.download-colors span {
+  font-weight: 300;
+  font-size: 14px;
+}
 /*# sourceMappingURL=main.css.map */
