@@ -29,10 +29,12 @@ html, body {
 }
 
 #app .container header {
+  position: relative;
   width: 310px;
   height: 100%;
   padding: 30px 40px;
   border-right: solid 1px #e0e0e0;
+  background: white;
 }
 
 #app .container header .logo {
@@ -173,6 +175,8 @@ html, body {
 }
 
 #app .container .main .filter {
+  position: relative;
+  z-index: 99999;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -186,8 +190,11 @@ html, body {
   top: 0;
   right: 0;
   padding: 15px;
+  padding-left: 14px;
   width: calc(100% - 420px);
   border-bottom: solid 1px #e0e0e0;
+  border-left: solid 1px #e0e0e0;
+  background-color: #fff;
 }
 
 #app .container .main .filter .search-bar {
@@ -264,5 +271,78 @@ html, body {
 #app .container .main .filter .collections a.download-colors span {
   font-weight: 300;
   font-size: 14px;
+}
+
+#app .container .colors {
+  position: relative;
+  z-index: 1;
+  padding-top: 55px;
+}
+
+#app .container .colors .color {
+  position: relative;
+  padding: 15px 15px 15px 0;
+  margin-left: 15px;
+  border-bottom: solid 1px #e0e0e0;
+  cursor: pointer;
+}
+
+#app .container .colors .color .main-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#app .container .colors .color .main-info .title {
+  width: 20%;
+  margin-right: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#app .container .colors .color .main-info .title h1 {
+  margin-bottom: 8px;
+  font-size: 20px;
+  line-height: 1.2;
+  color: #263238;
+  font-weight: 400;
+}
+
+#app .container .colors .color .main-info ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 80%;
+}
+
+#app .container .colors .color .main-info ul li button.color-btn {
+  border-radius: 3px;
+  display: block;
+  background-color: red;
+  width: 50px;
+  height: 40px;
+  padding: 8px;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: white;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+#app .container .colors .color .main-info ul li button.color-btn i {
+  visibility: hidden;
+}
+
+#app .container .colors .color .main-info ul li button.color-btn:hover i {
+  visibility: visible;
+}
+
+#app .container .colors .color .color-detail {
+  display: none;
 }
 /*# sourceMappingURL=main.css.map */

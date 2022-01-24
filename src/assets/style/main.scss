@@ -23,10 +23,12 @@ html, body {
         display: flex;
         height: 100%;
         header {
+            position: relative;
             width: 310px;
             height: 100%;
             padding: 30px 40px;
             border-right: solid 1px #e0e0e0;
+            background: white;
             .logo {
                 display: flex;
                 align-items: center;
@@ -132,6 +134,8 @@ html, body {
         .main {
             flex: 1;
             .filter {
+                position: relative;
+                z-index: 99999;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
@@ -139,8 +143,11 @@ html, body {
                 top: 0;
                 right: 0;
                 padding: 15px;
+                padding-left: 14px;
                 width: calc(100% - 420px);
                 border-bottom: solid 1px #e0e0e0;
+                border-left: solid 1px #e0e0e0;
+                background-color: #fff;
                 .search-bar {
                     position: relative;
                     color: #607D8B;
@@ -196,6 +203,65 @@ html, body {
                             font-size: 14px;
                         }
                     }
+                }
+            }
+        }
+        .colors {
+            position: relative;
+            z-index: 1;
+            padding-top: 55px;
+            .color {
+                position: relative;
+                padding: 15px 15px 15px 0;
+                margin-left: 15px;
+                border-bottom: solid 1px #e0e0e0;
+                cursor: pointer;
+                .main-info {
+                    display: flex;
+                    .title {
+                        width: 20%;
+                        margin-right: 20px;
+                        display: flex;
+                        align-items: center;
+                        h1 {
+                            margin-bottom: 8px;
+                            font-size: 20px;
+                            line-height: 1.2;
+                            color: #263238;
+                            font-weight: 400;
+                        }
+                    }
+                    ul {
+                        display: flex;
+                        width: 80%;
+                        li {
+                            button.color-btn {
+                                border-radius: 3px;
+                                display: block;
+                                background-color: red;
+                                width: 50px;
+                                height: 40px;
+                                padding: 8px;
+                                border: none;
+                                font-family: inherit;
+                                font-size: inherit;
+                                color: white;
+                                cursor: pointer;
+                                margin-right: 10px;
+                                i {
+                                    visibility: hidden;
+                                }
+                                &:hover {
+                                    i {
+                                        visibility: visible;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .color-detail {
+                    display: none;
                 }
             }
         }
