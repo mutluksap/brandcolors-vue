@@ -361,11 +361,12 @@ html, body {
   margin-top: 15px;
 }
 
-#app .container .colors .color .color-detail span {
+#app .container .colors .color .color-detail span, #app .container .colors .color .color-detail a {
   margin-right: 10px;
+  color: #607d8b;
 }
 
-#app .container .colors .color .color-detail span:hover {
+#app .container .colors .color .color-detail span:hover, #app .container .colors .color .color-detail a:hover {
   text-decoration: underline;
 }
 

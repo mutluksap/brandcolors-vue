@@ -28,9 +28,9 @@
             </div>
             <div class="color-detail">
                 <span>Updated 2/24/15</span>
-                <span>Brand URL</span>
-                <span>Source URL</span>
-                <span>Permalink</span>
+                <a href="">Brand URL</a>
+                <a href="">Source URL</a>
+                <a href="">Permalink</a>
             </div>
         </div>
         <div class="color active">
@@ -61,9 +61,9 @@
             </div>
             <div class="color-detail">
                 <span>Updated 2/24/15</span>
-                <span>Brand URL</span>
-                <span>Source URL</span>
-                <span>Permalink</span>
+                <a href="">Brand URL</a>
+                <a href="">Source URL</a>
+                <a href="">Permalink</a>
             </div>
         </div>
         
