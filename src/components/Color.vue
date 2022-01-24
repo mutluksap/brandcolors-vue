@@ -6,6 +6,7 @@
                     <h1>
                         500px
                     </h1>
+                    <i class="fas fa-check"></i>
                 </div>
                 <ul>
                     <li>
@@ -26,9 +27,46 @@
                 </ul>
             </div>
             <div class="color-detail">
-
+                <span>Updated 2/24/15</span>
+                <span>Brand URL</span>
+                <span>Source URL</span>
+                <span>Permalink</span>
             </div>
         </div>
+        <div class="color active">
+            <div class="main-info">
+                <div class="title">
+                    <h1>
+                        500px
+                    </h1>
+                    <i class="fas fa-check"></i>
+                </div>
+                <ul>
+                    <li>
+                        <button class="color-btn">
+                            <i class="far fa-file"></i>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="color-btn">
+                            <i class="far fa-file"></i>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="color-btn">
+                            <i class="far fa-file"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <div class="color-detail">
+                <span>Updated 2/24/15</span>
+                <span>Brand URL</span>
+                <span>Source URL</span>
+                <span>Permalink</span>
+            </div>
+        </div>
+        
     </div>
 </template>
 
