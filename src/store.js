@@ -4,9 +4,11 @@ import { createStore } from "vuex";
 const store = createStore({
   state: {
     colors: [],
+    selectedColors: [],
   },
   getters: {
     getColors(state) {
+      // return JSON.parse(JSON.stringify(state.colors));
       return state.colors;
     },
   },
@@ -17,8 +19,8 @@ const store = createStore({
   },
   actions: {
     getAllColors({ commit }) {
-      axios.get("../../colors.json").then((response) => {
-        commit.setColors(response);
+      axios.get("../colors.json").then((response) => {
+        commit("setColors", response.data);
       });
     },
   },

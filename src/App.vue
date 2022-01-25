@@ -13,6 +13,9 @@ export default {
   components: {
     Header,
     Main
+  },
+  created(){
+    this.$store.dispatch("getAllColors");
   }
 }
 </script>
