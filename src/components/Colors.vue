@@ -1,7 +1,6 @@
 <template>
     <div class="colors">
-        <Color></Color>
-        {{getColors}}
+        <Color :key="color" :color="color" v-for="color in getColors[0]"></Color>
     </div>
 </template>
 

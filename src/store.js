@@ -19,7 +19,7 @@ const store = createStore({
   },
   actions: {
     getAllColors({ commit }) {
-      axios.get("../colors.json").then((response) => {
+      axios.get("https://getirotel.com/colors.json").then((response) => {
         commit("setColors", response.data);
       });
     },
