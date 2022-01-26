@@ -8,8 +8,8 @@
                     <i class="fas fa-check"></i>
                 </div>
                 <ul>
-                    <li :key="acolor" v-for="acolor in color.colors">
-                        <button @click="copyColor" :style="{backgroundColor : '#' + acolor}" class="color-btn">
+                    <li :key="acolor" v-for="(acolor, index) in color.colors">
+                        <button @click="copyColor(index)" :style="{backgroundColor : '#' + acolor}" class="color-btn">
                             <i class="far fa-file"></i>
                         </button>
                         <input ref="input" type="text" :value="'#'+acolor">
@@ -31,15 +31,14 @@ export default {
     data(){
         return {
             activeClass : false,
-            message: ""
+            copyMessage: ""
         }
     },
     methods: {
-    copyColor(){
-        console.log(this.$refs);
-        // const data = this.$refs.input.select();
-        // console.log(data);
-        // document.execCommand("copy");
+    copyColor(data){
+        this.$refs.input[data].select();
+        document.execCommand("copy");
+        this.copyMessage = this.$refs.input[data].value;
     }
   }
 }
