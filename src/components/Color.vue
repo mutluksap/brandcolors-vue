@@ -39,6 +39,7 @@ export default {
         this.$refs.input[data].select();
         document.execCommand("copy");
         this.copyMessage = this.$refs.input[data].value;
+        this.activeClass = !this.activeClass;
     }
   }
 }
