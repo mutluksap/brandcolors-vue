@@ -294,7 +294,7 @@ html, body {
 }
 
 #app .container .colors .color .main-info .title {
-  width: 20%;
+  min-width: 20%;
   margin-right: 20px;
   display: -webkit-box;
   display: -ms-flexbox;

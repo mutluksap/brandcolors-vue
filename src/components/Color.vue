@@ -1,6 +1,5 @@
 <template>
-    <div>
-        <div class="color">
+        <div @click="activeClass = !activeClass" :class="{active : activeClass}" class="color">
             <div class="main-info">
                 <div class="title">
                     <h1>
@@ -10,9 +9,10 @@
                 </div>
                 <ul>
                     <li :key="acolor" v-for="acolor in color.colors">
-                        <button :style="{backgroundColor : '#' + acolor}" class="color-btn">
+                        <button @click="copyColor" :style="{backgroundColor : '#' + acolor}" class="color-btn">
                             <i class="far fa-file"></i>
                         </button>
+                        <input ref="input" type="text" :value="'#'+acolor">
                     </li>
                 </ul>
             </div>
@@ -23,11 +23,24 @@
                 <a href="">Permalink</a>
             </div>
         </div>
-    </div>
 </template>
 
 <script>
 export default {
-    props : ["color"]
+    props : ["color"],
+    data(){
+        return {
+            activeClass : false,
+            message: ""
+        }
+    },
+    methods: {
+    copyColor(){
+        console.log(this.$refs);
+        // const data = this.$refs.input.select();
+        // console.log(data);
+        // document.execCommand("copy");
+    }
+  }
 }
 </script>
