@@ -1,6 +1,6 @@
 <template>
     <div class="colors">
-        <Color :key="color" :color="color" v-for="color in getColors[0]"></Color>
+        <Color @copied-color="dataTransfer" :key="color" :color="color" v-for="color in getColors[0]"></Color>
     </div>
 </template>
 
@@ -10,6 +10,11 @@ import {mapGetters} from "vuex";
 export default {
     components: {
         Color
+    },
+    methods: {
+        dataTransfer(data){
+            this.$emit("copiedColor", data);
+        }
     },
     computed:{
         ...mapGetters(["getColors"])

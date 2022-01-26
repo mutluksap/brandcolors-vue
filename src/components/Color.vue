@@ -41,6 +41,7 @@ export default {
         document.execCommand("copy");
         this.copyMessage = this.$refs.input[data].value;
         this.activeClass = !this.activeClass;
+        this.$emit("copied-color", this.$refs.input[data].value);
     }
   }
 }
