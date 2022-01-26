@@ -172,6 +172,7 @@ html, body {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  position: relative;
 }
 
 #app .container .main .filter {
@@ -273,6 +274,23 @@ html, body {
   font-size: 14px;
 }
 
+#app .container .main .copied {
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  padding: 15px;
+  background: rgba(38, 50, 56, 0.75);
+  color: white;
+  -webkit-transition: .2s;
+  transition: .2s;
+  pointer-events: none;
+  z-index: 2000000;
+}
+
+#app .container .main .copied span {
+  color: #fff;
+}
+
 #app .container .colors {
   position: relative;
   z-index: 1;
@@ -347,8 +365,13 @@ html, body {
   margin-right: 10px;
 }
 
+#app .container .colors .color .main-info ul li button.color-btn span {
+  visibility: hidden;
+}
+
 #app .container .colors .color .main-info ul li button.color-btn i {
   visibility: hidden;
+  margin-right: 5px;
 }
 
 #app .container .colors .color .main-info ul li button.color-btn:hover i {
@@ -383,14 +406,20 @@ html, body {
 }
 
 #app .container .colors .color.active .main-info ul li {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1;
-          flex: 1 1;
+  width: 15%;
   margin-right: 8px;
 }
 
 #app .container .colors .color.active .main-info ul li button {
   width: 100%;
+}
+
+#app .container .colors .color.active .main-info ul li button span {
+  visibility: hidden;
+}
+
+#app .container .colors .color.active .main-info ul li button:hover span {
+  visibility: visible;
 }
 
 #app .container .colors .color.active .main-info .title i {

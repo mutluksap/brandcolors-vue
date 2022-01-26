@@ -133,6 +133,7 @@ html, body {
         }
         .main {
             flex: 1;
+            position: relative;
             .filter {
                 position: relative;
                 z-index: 99999;
@@ -205,6 +206,21 @@ html, body {
                     }
                 }
             }
+            .copied {
+                position: fixed;
+                right: 15px;
+                bottom: 15px;
+                padding: 15px;
+                background: rgba(38,50,56,0.75);
+                color: white;
+                -webkit-transition: .2s;
+                transition: .2s;
+                pointer-events: none;
+                z-index: 2000000;
+                span {
+                    color: #fff;
+                }
+            }
         }
         .colors {
             position: relative;
@@ -258,8 +274,12 @@ html, body {
                                 z-index: 99999;
                                 cursor: pointer;
                                 margin-right: 10px;
+                                span {
+                                    visibility: hidden;
+                                }
                                 i {
                                     visibility: hidden;
+                                    margin-right: 5px;
                                 }
                                 &:hover {
                                     i {
@@ -295,10 +315,16 @@ html, body {
                         ul {
                             width: 100%;
                             li {
-                                flex: 1 1;
+                                width: 15%;
                                 margin-right: 8px;
                                 button {
                                     width: 100%;
+                                    span {
+                                        visibility: hidden;
+                                    }
+                                    &:hover span {
+                                      visibility: visible;  
+                                    }
                                 }
                             }
                         }

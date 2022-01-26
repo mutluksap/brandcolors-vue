@@ -11,6 +11,7 @@
                     <li :key="acolor" v-for="(acolor, index) in color.colors">
                         <button @click="copyColor(index)" :style="{backgroundColor : '#' + acolor}" class="color-btn">
                             <i class="far fa-file"></i>
+                            <span> #{{acolor}} </span>
                         </button>
                         <input ref="input" type="text" :value="'#'+acolor">
                     </li>
