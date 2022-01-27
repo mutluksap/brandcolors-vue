@@ -1,6 +1,6 @@
 <template>
     <div class="colors">
-        <Color @copied-color="dataTransfer" :key="color" :color="color" v-for="color in getColors[0]"></Color>
+        <Color :words="words" @copied-color="dataTransfer" :key="color" :color="color" v-for="color in getColors[0]"></Color>
     </div>
 </template>
 
@@ -8,6 +8,7 @@
 import Color from "./Color.vue";
 import {mapGetters} from "vuex";
 export default {
+    props: ["words"],
     components: {
         Color
     },

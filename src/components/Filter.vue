@@ -2,7 +2,7 @@
     <div class="filter">
         <div class="search-bar">
             <i class="fas fa-search"></i>
-            <input type="search" placeholder="Search Brands">
+            <input type="input" placeholder="Search Brands" @keyup="getWords">
         </div>
         <div class="collections">
             <div class="download-collections">
@@ -36,3 +36,13 @@
         
     </div>
 </template>
+
+<script>
+export default {
+    methods: {
+        getWords(e){
+            this.$emit("words", e.target.value);
+        }
+    }
+}
+</script>

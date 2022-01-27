@@ -1,7 +1,7 @@
 <template>
     <div class="main">
-        <Filter/>
-        <Colors @copiedColor="cameData"/>
+        <Filter @words="words" />
+        <Colors :words="searchedColor" @copiedColor="cameData"/>
         <CopyBox :colorTransfer="copyColor"/>
     </div>
 </template>
@@ -13,7 +13,8 @@ import CopyBox from "./CopyBox.vue"
 export default {
     data(){
         return {
-            copyColor : null
+            copyColor : null,
+            searchedColor: ""
         }
     },
     components: {
@@ -24,6 +25,9 @@ export default {
     methods: {
         cameData(data){
             this.copyColor = data;
+        },
+        words(data){
+            this.searchedColor = data;
         }
     }
 }

@@ -20,7 +20,7 @@ export default {
             var vm = this;
             setTimeout(() => {
                 vm.visible = 'hidden';
-            }, 1500);
+            }, 1000);
         }
     }
 }
