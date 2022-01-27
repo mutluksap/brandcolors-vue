@@ -11,10 +11,19 @@ const store = createStore({
       // return JSON.parse(JSON.stringify(state.colors));
       return state.colors;
     },
+    getSelectedColors(state) {
+      return state.selectedColors;
+    },
   },
   mutations: {
     setColors(state, items) {
       state.colors.push(items);
+    },
+    addSelectedColors(state, color) {
+      state.selectedColors.push(color);
+    },
+    removeSelectedColors(state) {
+      state.selectedColors = [];
     },
   },
   actions: {
