@@ -240,10 +240,14 @@ html, body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  opacity: .33;
+}
+
+#app .container .main .filter .collections .download-collections ul li {
+  cursor: pointer;
 }
 
 #app .container .main .filter .collections .download-collections ul li a {
-  opacity: .33;
   pointer-events: none;
   margin-left: 15px;
   color: #607D8B;
@@ -259,6 +263,11 @@ html, body {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  opacity: 1;
+}
+
+#app .container .main .filter .collections .download-collections ul.active {
+  opacity: 1;
 }
 
 #app .container .main .filter .collections a.download-colors {

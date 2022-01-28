@@ -6,7 +6,7 @@
         </div>
         <div class="collections">
             <div class="download-collections">
-            <ul>
+            <ul :class="{active : getSelectedColors.length > 0}">
                 <li>
                     <a href="#">
                         <i class="fas fa-download"></i>
@@ -17,13 +17,13 @@
                         <i class="fas fa-link"></i>
                     </a>
                 </li>
-                <li>
+                <li @click.prevent="removeAllSelectedColors">
                     <a href="#">
                         <i class="fas fa-times"></i>
                     </a>
                 </li>
                 <span>
-                    0 brands collected
+                    {{getSelectedColors.length}} brands collected
                 </span>
             </ul>
             
@@ -38,11 +38,17 @@
 </template>
 
 <script>
+import {mapGetters} from "vuex"
+import {mapMutations} from "vuex"
 export default {
     methods: {
+        ...mapMutations(["removeAllSelectedColors"]),
         getWords(e){
             this.$emit("words", e.target.value);
         }
+    },
+    computed: {
+        ...mapGetters(["getSelectedColors"]),
     }
 }
 </script>

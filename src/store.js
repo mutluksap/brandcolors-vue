@@ -22,7 +22,10 @@ const store = createStore({
     addSelectedColors(state, color) {
       state.selectedColors.push(color);
     },
-    removeSelectedColors(state) {
+    removeSelectedColors(state, index) {
+      state.selectedColors.splice(index, 1);
+    },
+    removeAllSelectedColors(state) {
       state.selectedColors = [];
     },
   },

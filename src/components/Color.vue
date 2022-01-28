@@ -1,7 +1,7 @@
 <template>
-        <div :slug="color.slug" :style="{display: matchedColor}" @click="selectColor(color)" :class="{active : activeClass}" class="color">
+        <div ref="brand" :slug="color.slug" :style="{display: matchedColor}"  :class="{active : activeClass}" class="color">
             <div class="main-info">
-                <div class="title">
+                <div @click="selectColor(color)" class="title">
                     <h1>
                         {{color.title}}
                     </h1>
@@ -32,7 +32,6 @@ export default {
     data(){
         return {
             activeClass : false,
-            copyMessage: "",
             matchedColor: "block",
         }
     },
@@ -40,13 +39,11 @@ export default {
     copyColor(data){
         this.$refs.input[data].select();
         document.execCommand("copy");
-        this.copyMessage = this.$refs.input[data].value;
-        this.activeClass = !this.activeClass;
         this.$emit("copied-color", this.$refs.input[data].value);
     },
-    selectColor(){
+    selectColor(color){
         this.activeClass = !this.activeClass;
-        
+        this.$store.commit("addSelectedColors", color);
     }
   },
   watch: {

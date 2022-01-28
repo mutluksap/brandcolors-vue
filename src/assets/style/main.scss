@@ -176,9 +176,10 @@ html, body {
                         ul {
                             display: flex;
                             align-items: center;
+                            opacity: .33;
                             li {
+                                cursor: pointer;
                                 a {
-                                    opacity: .33;
                                     pointer-events: none;
                                     margin-left: 15px;
                                     color: #607D8B;
@@ -191,6 +192,10 @@ html, body {
                                 font-weight: 300;
                                 font-size: 14px;
                                 user-select: none;
+                                opacity: 1;
+                            }
+                            &.active {
+                                opacity: 1;
                             }
                         }
                     }
