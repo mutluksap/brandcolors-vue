@@ -8,7 +8,7 @@
 import Color from "./Color.vue";
 import {mapGetters} from "vuex";
 export default {
-    props: ["words"],
+    props: ["words", "clearAllBrands"],
     components: {
         Color
     },

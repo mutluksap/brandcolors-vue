@@ -39,12 +39,13 @@
 
 <script>
 import {mapGetters} from "vuex"
-import {mapMutations} from "vuex"
 export default {
     methods: {
-        ...mapMutations(["removeAllSelectedColors"]),
         getWords(e){
             this.$emit("words", e.target.value);
+        },
+        removeAllSelectedColors(){
+            this.$store.commit("removeAllSelectedColors");
         }
     },
     computed: {

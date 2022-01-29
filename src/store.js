@@ -8,7 +8,6 @@ const store = createStore({
   },
   getters: {
     getColors(state) {
-      // return JSON.parse(JSON.stringify(state.colors));
       return state.colors;
     },
     getSelectedColors(state) {

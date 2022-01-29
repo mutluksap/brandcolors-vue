@@ -14,7 +14,7 @@ export default {
     data(){
         return {
             copyColor : null,
-            searchedColor: ""
+            searchedColor: "",
         }
     },
     components: {
