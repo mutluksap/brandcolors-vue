@@ -21,7 +21,10 @@
                 <span>{{color.modified}}</span>
                 <a target="_blank" :href="color.brand_url">Brand URL</a>
                 <a target="_blank" :href="color.source_url">Source URL</a>
-                <a :href="'/'+ color.slug">Permalink</a>
+                <!-- <router-link :to="'/c/'+ color.slug">
+                    Permalink
+                </router-link> -->
+                <a :href="'/c/'+ color.slug"></a>
             </div>
         </div>
 </template>
@@ -43,8 +46,9 @@ export default {
     },
     selectColor(color){
         this.activeClass = !this.activeClass;
-        const control = this.$store.getters.getSelectedColors.find(brand => brand.slug == color.slug);
-        if(control){
+        const control = this.$store.getters.getSelectedColors.findIndex(brand => brand.slug === color.slug);
+        console.log(control);
+        if(control !== -1){
             this.$store.commit("removeSelectedColors", control);
         }else {
             this.$store.commit("addSelectedColors", color);

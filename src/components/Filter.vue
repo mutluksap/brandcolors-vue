@@ -12,7 +12,7 @@
                         <i class="fas fa-download"></i>
                     </a>
                 </li>
-                <li>
+                <li @click="showSelectedBrands">
                     <a href="#">
                         <i class="fas fa-link"></i>
                     </a>
@@ -46,6 +46,9 @@ export default {
         },
         removeAllSelectedColors(){
             this.$store.commit("removeAllSelectedColors");
+        },
+        showSelectedBrands(){
+            prompt("Here's the URL to share");
         }
     },
     computed: {
