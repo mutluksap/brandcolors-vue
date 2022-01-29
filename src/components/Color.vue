@@ -46,13 +46,14 @@ export default {
     },
     selectColor(color){
         this.activeClass = !this.activeClass;
+        //Toggle//
         const control = this.$store.getters.getSelectedColors.findIndex(brand => brand.slug === color.slug);
-        console.log(control);
         if(control !== -1){
             this.$store.commit("removeSelectedColors", control);
         }else {
             this.$store.commit("addSelectedColors", color);
         }
+        //Header color slug
     }
   },
   watch: {

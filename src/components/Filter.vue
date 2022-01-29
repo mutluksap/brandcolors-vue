@@ -48,7 +48,7 @@ export default {
             this.$store.commit("removeAllSelectedColors");
         },
         showSelectedBrands(){
-            prompt("Here's the URL to share");
+            prompt("Here's the URL to share", "https://localhost:8080/"+ this.$store.getters.getSelectedColors.join());
         }
     },
     computed: {
