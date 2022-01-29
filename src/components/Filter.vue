@@ -23,7 +23,7 @@
             </ul>
             
         </div>
-        <a download="asd.jpg" @click="downloadColors" class="download-colors" href="#">
+        <a @click="downloadColors" class="download-colors" href="#">
                 <i class="fas fa-download"></i>
                 <span>All Brands</span>
         </a>
@@ -52,11 +52,10 @@ export default {
                     method: 'GET',
                     responseType: 'blob',
                 }).then((res) => {
-                    console.log(res);
                      var FILE = window.URL.createObjectURL(new Blob([res.data]));
-                     var docUrl = document.createElement('x');
+                     var docUrl = document.createElement('a');
                      docUrl.href = FILE;
-                     docUrl.setAttribute('download', 'asd.jpg');
+                     docUrl.setAttribute('download', 'teemo.jpeg');
                      document.body.appendChild(docUrl);
                      docUrl.click();
                 });
