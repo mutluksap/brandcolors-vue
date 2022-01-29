@@ -5,6 +5,7 @@ const store = createStore({
   state: {
     colors: [],
     selectedColors: [],
+    selectedColorsSlug: [],
   },
   getters: {
     getColors(state) {
@@ -12,6 +13,9 @@ const store = createStore({
     },
     getSelectedColors(state) {
       return state.selectedColors;
+    },
+    getSelectedColorsSlug(state) {
+      return state.selectedColorsSlug;
     },
   },
   mutations: {
@@ -26,6 +30,12 @@ const store = createStore({
     },
     removeAllSelectedColors(state) {
       state.selectedColors = [];
+    },
+    addSelectedColorsSlug(state, slug) {
+      state.selectedColorsSlug.push(slug);
+    },
+    removeSelectedColorsSlug(state, slug) {
+      state.selectedColorsSlug.splice(slug, 1);
     },
   },
   actions: {

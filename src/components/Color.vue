@@ -50,8 +50,10 @@ export default {
         const control = this.$store.getters.getSelectedColors.findIndex(brand => brand.slug === color.slug);
         if(control !== -1){
             this.$store.commit("removeSelectedColors", control);
+            this.$store.commit("removeSelectedColorsSlug", color.slug);
         }else {
             this.$store.commit("addSelectedColors", color);
+            this.$store.commit("addSelectedColorsSlug", color.slug);
         }
         //Header color slug
     }
