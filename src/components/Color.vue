@@ -24,7 +24,7 @@
                 <!-- <router-link :to="'/c/'+ color.slug">
                     Permalink
                 </router-link> -->
-                <a :href="'/c/'+ color.slug"></a>
+                <a :href="'/c/'+ color.slug">Permalink</a>
             </div>
         </div>
 </template>

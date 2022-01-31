@@ -21,21 +21,27 @@
                     {{getSelectedColors.length}} brands collected
                 </span>
             </ul>
-            
         </div>
-        <a @click="downloadColors" class="download-colors" href="#">
-                <i class="fas fa-download"></i>
-                <span>All Brands</span>
-        </a>
+                <select @change="downloadColors" v-model="version">
+                    <option value="txt">Download Selected Colors</option>
+                    <option value="css">CSS</option>
+                    <option value="less">LESS</option>
+                    <option value="scss">SCSS</option>
+                </select>
         </div>
-        
     </div>
 </template>
 
 <script>
 import {mapGetters} from "vuex"
-import axios from "axios"
 export default {
+    data(){
+        return {
+            version: "",
+            selectedColorsCode: "",
+            symbol: ""
+        }
+    },
     methods: {
         getWords(e){
             this.$emit("words", e.target.value);
@@ -47,22 +53,46 @@ export default {
             prompt("Here's the URL to share", "https://localhost:8080/"+ this.$store.getters.getSelectedColorsSlug.join());
         },
         downloadColors(){
-             axios({
-                    url: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Teemo_18.jpg', // File URL Goes Here
-                    method: 'GET',
-                    responseType: 'blob',
-                }).then((res) => {
-                     var FILE = window.URL.createObjectURL(new Blob([res.data]));
-                     var docUrl = document.createElement('a');
-                     docUrl.href = FILE;
-                     docUrl.setAttribute('download', 'teemo.jpeg');
-                     document.body.appendChild(docUrl);
-                     docUrl.click();
+             if(this.$store.getters.getSelectedColors.length > 0){
+                
+                let colors = this.$store.getters.getSelectedColors;
+
+                if(this.version == "css"){
+                    this.symbol = "--"
+                }
+                else if(this.version == "scss"){
+                    this.symbol == "@"
+                }
+                else {
+                    this.symbol == "$"
+                }
+
+                colors.forEach((brand) => {
+                        brand.colors.forEach((code, index) => {
+                            this.selectedColorsCode += `--${brand.slug}-${index}: #${code};\n`;
+                        })
                 });
+
+                //Download code
+                let text = this.selectedColorsCode;
+                let filename = 'colors.' + this.version;
+                let element = document.createElement('a');
+                element.setAttribute('href', 'data:application/json;charset=utf-8,' + encodeURIComponent(text));
+                element.setAttribute('download', filename);
+
+                element.style.display = 'none';
+                document.body.appendChild(element);
+
+                element.click();
+                document.body.removeChild(element);    
+             }
+             else {
+                 alert("Please select a color for download.")
+             }
         }
     },
     computed: {
         ...mapGetters(["getSelectedColors"]),
-    }
+    },
 }
 </script>
