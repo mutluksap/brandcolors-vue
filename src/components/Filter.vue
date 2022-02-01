@@ -82,7 +82,7 @@ export default {
                 this.selectedColorsCode += `${this.symbol}${brand.slug}-${index}: #${code};\n`;
               });
             });
-            break;
+          //     break;
         }
 
         // colors.forEach((brand) => {
@@ -106,6 +106,8 @@ export default {
 
         element.click();
         document.body.removeChild(element);
+
+        this.selectedColorsCode = "";
       } else {
         alert("Please select a color for download.");
       }
