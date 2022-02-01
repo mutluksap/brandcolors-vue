@@ -199,16 +199,23 @@ body {
               }
             }
           }
-          a.download-colors {
+          select {
             color: #607d8b;
-            i {
-              margin-right: 8px;
-            }
-            span {
-              font-weight: 300;
-              font-size: 14px;
+            opacity: 0.33;
+            &.active {
+              opacity: 1;
             }
           }
+          // a.download-colors {
+          //   color: #607d8b;
+          //   i {
+          //     margin-right: 8px;
+          //   }
+          //   span {
+          //     font-weight: 300;
+          //     font-size: 14px;
+          //   }
+          // }
         }
       }
       .copied {

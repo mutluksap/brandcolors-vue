@@ -20,11 +20,19 @@
           <span> {{ getSelectedColors.length }} brands collected </span>
         </ul>
       </div>
-      <select @change="downloadColors" v-model="version">
-        <option>Download Selected Colors</option>
-        <option value="css">CSS</option>
-        <option value="less">LESS</option>
-        <option value="scss">SCSS</option>
+      <select
+        :class="{ active: getSelectedColors.length > 0 }"
+        @change="downloadColors"
+        v-model="version"
+      >
+        <option value="" disabled>Download Selected Colors</option>
+        <option
+          :value="option.toLowerCase()"
+          :key="option"
+          v-for="option in options"
+        >
+          {{ option }}
+        </option>
       </select>
     </div>
   </div>
@@ -38,6 +46,7 @@ export default {
       version: "",
       selectedColorsCode: "",
       symbol: "",
+      options: ["CSS", "LESS", "SCSS"],
     };
   },
   methods: {
@@ -71,7 +80,7 @@ export default {
             this.symbol = "$";
             colors.forEach((brand) => {
               brand.colors.forEach((code, index) => {
-                this.selectedColorsCode += `${this.symbol}${brand.slug}-${index}: #${code};\n`;
+                this.selectedColorsCode += `${this.symbol}bc-${brand.slug}-${index}: #${code};\n`;
               });
             });
             break;
@@ -82,14 +91,8 @@ export default {
                 this.selectedColorsCode += `${this.symbol}${brand.slug}-${index}: #${code};\n`;
               });
             });
-          //     break;
+            break;
         }
-
-        // colors.forEach((brand) => {
-        //   brand.colors.forEach((code, index) => {
-        //     this.selectedColorsCode += `${this.symbol}${brand.slug}-${index}: #${code};\n`;
-        //   });
-        // });
 
         //Download code
         let text = this.selectedColorsCode;
