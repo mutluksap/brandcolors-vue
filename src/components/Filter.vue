@@ -57,11 +57,13 @@ export default {
       this.$store.commit("removeAllSelectedColors");
     },
     showSelectedBrands() {
-      prompt(
-        "Here's the URL to share",
-        "https://localhost:8080/" +
-          this.$store.getters.getSelectedColorsSlug.join()
-      );
+      if (this.$store.getters.getSelectedColors.length > 0) {
+        prompt(
+          "Here's the URL to share",
+          "https://localhost:8080/" +
+            this.$store.getters.getSelectedColorsSlug.join()
+        );
+      }
     },
     downloadColors() {
       if (this.$store.getters.getSelectedColors.length > 0) {
