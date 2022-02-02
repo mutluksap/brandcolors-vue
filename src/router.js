@@ -1,10 +1,15 @@
 import { createRouter, createWebHistory } from "vue-router";
-import ColorDetail from "./components/ColorDetail";
+import Home from "./views/Home.vue";
+import Detail from "./views/Detail.vue";
 
 const routes = [
   {
-    path: "/asd",
-    component: ColorDetail,
+    path: "/",
+    component: Home,
+  },
+  {
+    path: "/c/:color",
+    component: Detail,
   },
 ];
 

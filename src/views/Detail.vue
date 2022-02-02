@@ -1,5 +1,6 @@
 <template>
-  <h1>Color Detail Sayfası</h1>
+  <router-view> </router-view>
+  <p>asdasd</p>
 </template>
 
 <script>

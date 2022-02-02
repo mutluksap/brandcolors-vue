@@ -31,10 +31,7 @@
       <span>{{ color.modified }}</span>
       <a target="_blank" :href="color.brand_url">Brand URL</a>
       <a target="_blank" :href="color.source_url">Source URL</a>
-      <!-- <router-link :to="'/c/'+ color.slug">
-                    Permalink
-                </router-link> -->
-      <a :href="'/c/' + color.slug">Permalink</a>
+      <router-link :to="'/c/' + color.slug"> Permalink </router-link>
     </div>
   </div>
 </template>
