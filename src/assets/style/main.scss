@@ -360,4 +360,32 @@ body {
       }
     }
   }
+  @media (max-width: 1024px) {
+    header {
+      display: none;
+    }
+    .main {
+      .filter {
+        width: 100% !important;
+        justify-content: center !important;
+        .search-bar {
+          margin-left: 80px;
+        }
+        .collections {
+          display: none !important;
+        }
+      }
+      .colors {
+        padding: 1rem;
+        padding-top: 3.2rem;
+        .color {
+          .main-info {
+            .title {
+              min-width: 50% !important;
+            }
+          }
+        }
+      }
+    }
+  }
 }

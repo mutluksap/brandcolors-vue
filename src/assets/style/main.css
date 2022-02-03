@@ -451,4 +451,29 @@ body {
 #app .container .colors .color.active .color-detail {
   display: block;
 }
+
+@media (max-width: 1024px) {
+  #app header {
+    display: none;
+  }
+  #app .main .filter {
+    width: 100% !important;
+    -webkit-box-pack: center !important;
+        -ms-flex-pack: center !important;
+            justify-content: center !important;
+  }
+  #app .main .filter .search-bar {
+    margin-left: 80px;
+  }
+  #app .main .filter .collections {
+    display: none !important;
+  }
+  #app .main .colors {
+    padding: 1rem;
+    padding-top: 3.2rem;
+  }
+  #app .main .colors .color .main-info .title {
+    min-width: 50% !important;
+  }
+}
 /*# sourceMappingURL=main.css.map */

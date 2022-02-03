@@ -74,6 +74,9 @@ export default {
       let colors = this.colorsURL.split(",");
       console.log(colors);
     }
+    if (this.$route.params.color) {
+      console.log(this.$route.params.color);
+    }
   },
 };
 </script>
