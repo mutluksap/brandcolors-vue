@@ -60,7 +60,7 @@ export default {
   },
   methods: {
     getWords(e) {
-      this.$emit("words", e.target.value);
+      this.$emit("words", e.target.value.toLowerCase());
     },
     removeAllSelectedColors() {
       this.$store.commit("removeAllSelectedColors");

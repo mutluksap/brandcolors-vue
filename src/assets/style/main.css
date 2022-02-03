@@ -392,7 +392,6 @@ body {
 
 #app .container .colors .color .main-info ul li button.color-btn i {
   visibility: hidden;
-  margin-right: 5px;
 }
 
 #app .container .colors .color .main-info ul li button.color-btn:hover i {
@@ -439,6 +438,10 @@ body {
 
 #app .container .colors .color.active .main-info ul li button span {
   visibility: hidden;
+}
+
+#app .container .colors .color.active .main-info ul li button i {
+  margin-right: 5px;
 }
 
 #app .container .colors .color.active .main-info ul li button:hover span {

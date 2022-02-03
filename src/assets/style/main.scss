@@ -299,7 +299,6 @@ body {
                 }
                 i {
                   visibility: hidden;
-                  margin-right: 5px;
                 }
                 &:hover {
                   i {
@@ -341,6 +340,9 @@ body {
                   width: 100%;
                   span {
                     visibility: hidden;
+                  }
+                  i {
+                    margin-right: 5px;
                   }
                   &:hover span {
                     visibility: visible;
