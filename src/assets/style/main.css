@@ -349,6 +349,7 @@ body {
   line-height: 1.2;
   color: #263238;
   font-weight: 400;
+  width: 150px;
 }
 
 #app .container .colors .color .main-info .title i {
