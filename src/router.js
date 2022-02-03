@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "./views/Home.vue";
-import Detail from "./views/Detail.vue";
 
 const routes = [
   {
@@ -9,7 +8,19 @@ const routes = [
   },
   {
     path: "/c/:color",
-    component: Detail,
+    component: Home,
+  },
+  {
+    path: "/c",
+    redirect: "/",
+  },
+  {
+    path: "/b/:colors",
+    component: Home,
+  },
+  {
+    path: "/b",
+    redirect: "/",
   },
 ];
 

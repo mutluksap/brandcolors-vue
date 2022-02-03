@@ -31,7 +31,8 @@
       <span>{{ color.modified }}</span>
       <a target="_blank" :href="color.brand_url">Brand URL</a>
       <a target="_blank" :href="color.source_url">Source URL</a>
-      <router-link :to="'/c/' + color.slug"> Permalink </router-link>
+      <a @click="goDetail(color)">Permalink</a>
+      <!-- <router-link :to="'/c/' + color.slug"> Permalink </router-link> -->
     </div>
   </div>
 </template>
@@ -64,6 +65,12 @@ export default {
         this.$store.commit("addSelectedColors", color);
         this.$store.commit("addSelectedColorsSlug", color.slug);
       }
+    },
+    goDetail(color) {
+      this.$emit("colorDetail", color);
+      this.$store.commit("removeAllSelectedColors");
+      this.$store.commit("addSelectedColors", color);
+      this.$router.push(`/c/${color.slug}`);
     },
   },
   watch: {

@@ -1,11 +1,20 @@
 <template>
   <div class="filter">
-    <div class="search-bar">
+    <div v-if="$route.params.color" class="search-bar">
+      <i @click="goBack" class="fas fa-arrow-left"></i>
+      <span>All Brands</span>
+    </div>
+    <div v-else class="search-bar">
       <i class="fas fa-search"></i>
       <input type="input" placeholder="Search Brands" @keyup="getWords" />
     </div>
     <div class="collections">
-      <div class="download-collections">
+      <div
+        v-if="
+          $store.getters.getSelectedColors.length !== 1 || !$route.params.color
+        "
+        class="download-collections"
+      >
         <ul :class="{ active: getSelectedColors.length > 0 }">
           <li @click="showSelectedBrands">
             <a href="#">
@@ -116,6 +125,10 @@ export default {
       } else {
         alert("Please select a color for download.");
       }
+    },
+    goBack() {
+      this.$store.commit("removeAllSelectedColors");
+      this.$router.push("/");
     },
   },
   computed: {

@@ -202,6 +202,16 @@ body {
 #app .container .main .filter .search-bar {
   position: relative;
   color: #607d8b;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#app .container .main .filter .search-bar span {
+  margin-left: 1.5rem;
 }
 
 #app .container .main .filter .search-bar input {
@@ -217,6 +227,10 @@ body {
   left: 0;
   top: 5px;
   color: #607d8b;
+}
+
+#app .container .main .filter .search-bar i.fas.fa-arrow-left {
+  cursor: pointer;
 }
 
 #app .container .main .filter .collections {

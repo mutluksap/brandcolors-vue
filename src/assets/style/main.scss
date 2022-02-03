@@ -152,6 +152,11 @@ body {
         .search-bar {
           position: relative;
           color: #607d8b;
+          display: flex;
+          align-items: center;
+          span {
+            margin-left: 1.5rem;
+          }
           input {
             color: #607d8b;
             caret-color: #607d8b;
@@ -164,6 +169,9 @@ body {
             left: 0;
             top: 5px;
             color: #607d8b;
+            &.fas.fa-arrow-left {
+              cursor: pointer;
+            }
           }
         }
         .collections {
