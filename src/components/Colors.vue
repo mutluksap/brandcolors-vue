@@ -78,7 +78,6 @@ export default {
         return brand.slug == this.$route.params.color;
       });
       this.ColorDetail = res[0];
-      console.log(res);
     }
   },
 };
