@@ -70,5 +70,16 @@ export default {
   computed: {
     ...mapGetters(["getColors"]),
   },
+  created() {
+    if (this.$route.params.color) {
+      let colors = Object.values(this.$store.getters.getColors[0]);
+      console.log(this.$route.params.color);
+      let res = colors.filter((brand) => {
+        return brand.slug == this.$route.params.color;
+      });
+      this.ColorDetail = res[0];
+      console.log(res);
+    }
+  },
 };
 </script>
