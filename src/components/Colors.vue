@@ -53,6 +53,7 @@ export default {
   data() {
     return {
       ColorDetail: "",
+      colorUrl: this.$route.params.color,
       colorsURL: this.$route.params.colors,
     };
   },
@@ -68,15 +69,6 @@ export default {
   },
   computed: {
     ...mapGetters(["getColors"]),
-  },
-  created() {
-    if (this.$route.params.colors) {
-      let colors = this.colorsURL.split(",");
-      console.log(colors);
-    }
-    if (this.$route.params.color) {
-      console.log(this.$route.params.color);
-    }
   },
 };
 </script>

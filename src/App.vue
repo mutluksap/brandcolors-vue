@@ -3,9 +3,10 @@
 </template>
 
 <script>
+import colors from "./colors.json";
 export default {
   created() {
-    this.$store.dispatch("getAllColors");
+    this.$store.commit("setColors", colors[0]);
   },
 };
 </script>

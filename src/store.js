@@ -1,4 +1,3 @@
-import axios from "axios";
 import { createStore } from "vuex";
 
 const store = createStore({
@@ -36,13 +35,6 @@ const store = createStore({
     },
     removeSelectedColorsSlug(state, slug) {
       state.selectedColorsSlug.splice(slug, 1);
-    },
-  },
-  actions: {
-    getAllColors({ commit }) {
-      axios.get("https://getirotel.com/colors.json").then((response) => {
-        commit("setColors", response.data);
-      });
     },
   },
 });
