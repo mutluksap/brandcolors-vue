@@ -322,7 +322,6 @@ body {
   padding: 15px 15px 15px 0;
   margin-left: 15px;
   border-bottom: solid 1px #e0e0e0;
-  cursor: pointer;
 }
 
 #app .container .colors .color .main-info {
@@ -341,6 +340,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   position: relative;
+  cursor: pointer;
 }
 
 #app .container .colors .color .main-info .title h1 {
@@ -457,27 +457,59 @@ body {
 }
 
 @media (max-width: 1024px) {
-  #app header {
+  #app .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #app .container header {
+    width: 100%;
+    display: block;
+    padding: 70px 0 0 35px;
+  }
+  #app .container header .logo {
+    margin-bottom: 1rem;
+  }
+  #app .container header h2 {
     display: none;
   }
-  #app .main .filter {
+  #app .container header a.details-color {
+    display: none;
+  }
+  #app .container header .share {
+    display: none;
+  }
+  #app .container .main {
+    width: 100%;
+  }
+  #app .container .main .filter {
     width: 100% !important;
     -webkit-box-pack: center !important;
         -ms-flex-pack: center !important;
             justify-content: center !important;
   }
-  #app .main .filter .search-bar {
+  #app .container .main .filter .search-bar {
     margin-left: 80px;
   }
-  #app .main .filter .collections {
+  #app .container .main .filter .collections {
     display: none !important;
   }
-  #app .main .colors {
+  #app .container .main .colors {
+    width: 100%;
     padding: 1rem;
-    padding-top: 3.2rem;
   }
-  #app .main .colors .color .main-info .title {
-    min-width: 50% !important;
+  #app .container .main .colors .color .main-info .title {
+    min-width: 40% !important;
+  }
+  #app .container .main .colors .color.active .main-info ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #app .container .main .colors .color.active .main-info ul li {
+    width: 100%;
   }
 }
 /*# sourceMappingURL=main.css.map */

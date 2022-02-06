@@ -32,6 +32,7 @@
   </div>
   <div v-else class="colors">
     <Color
+      :clearColor="allColorClear"
       @colorDetail="ColorDetail = $event"
       :words="words"
       @copied-color="dataTransfer"
@@ -46,7 +47,7 @@
 import Color from "./Color.vue";
 import { mapGetters } from "vuex";
 export default {
-  props: ["words", "clearAllBrands"],
+  props: ["words", "clearAllBrands", "allColorClear"],
   components: {
     Color,
   },
@@ -79,6 +80,7 @@ export default {
       });
       this.ColorDetail = res[0];
     }
+    console.log(this.$route.params);
   },
 };
 </script>

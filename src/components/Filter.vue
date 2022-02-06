@@ -64,6 +64,11 @@ export default {
     },
     removeAllSelectedColors() {
       this.$store.commit("removeAllSelectedColors");
+      let color = document.querySelectorAll(".color.active");
+      color.forEach((el) => {
+        el.classList.remove("active");
+      });
+      this.$emit("allColorClear", false);
     },
     showSelectedBrands() {
       if (this.$store.getters.getSelectedColors.length > 0) {

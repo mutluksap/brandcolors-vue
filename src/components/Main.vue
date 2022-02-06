@@ -1,7 +1,11 @@
 <template>
   <div class="main">
-    <Filter @words="words" />
-    <Colors :words="searchedColor" @copiedColor="cameData" />
+    <Filter @allColorClear="fromChild = $event" @words="words" />
+    <Colors
+      :allColorClear="fromChild"
+      :words="searchedColor"
+      @copiedColor="cameData"
+    />
     <CopyBox :colorTransfer="copyColor" />
   </div>
 </template>
@@ -15,6 +19,7 @@ export default {
     return {
       copyColor: null,
       searchedColor: "",
+      fromChild: "",
     };
   },
   components: {

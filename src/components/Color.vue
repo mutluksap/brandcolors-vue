@@ -39,7 +39,7 @@
 
 <script>
 export default {
-  props: ["color", "words"],
+  props: ["color", "words", "clearColor"],
   data() {
     return {
       activeClass: false,
@@ -80,6 +80,9 @@ export default {
       } else {
         this.matchedColor = "none";
       }
+    },
+    clearColor(value) {
+      this.activeClass = value;
     },
   },
 };
