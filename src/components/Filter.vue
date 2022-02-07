@@ -73,7 +73,7 @@ export default {
       if (this.$store.getters.getSelectedColors.length > 0) {
         prompt(
           "Here's the URL to share",
-          "http://localhost:8080/b/" +
+          "https://brandcolors-vue.netlify.app/b/" +
             this.$store.getters.getSelectedColorsSlug.join()
         );
       }
