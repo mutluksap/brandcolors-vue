@@ -1,24 +1,11 @@
-# brandcolors-vue
+# brandcolors.net Vue3 + SCSS
 
-## Project setup
-```
-npm install
-```
+Vue.js ile yapmak istediğim bir projeyi uzun bir süre sonra tamamlayabildim :)
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+`Vue3`, `JavaScript` ve `SCSS` ile yaptığım projenin demosuna aşağıdan ulaşarak inceleyebilirsiniz.
 
-### Compiles and minifies for production
-```
-npm run build
-```
+![brandcolors-vue-clone](src/assets/brandcolors-vue-clone.png)
 
-### Lints and fixes files
-```
-npm run lint
-```
+## Demo
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+[https://brandcolors-vue.netlify.app/](https://brandcolors-vue.netlify.app/)
