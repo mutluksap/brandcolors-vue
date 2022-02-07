@@ -69,6 +69,7 @@ export default {
     goDetail(color) {
       this.$emit("colorDetail", color);
       this.$store.commit("removeAllSelectedColors");
+      this.$store.commit("removeAllSelectedColorsSlug");
       this.$store.commit("addSelectedColors", color);
       this.$router.push(`/c/${color.slug}`);
     },

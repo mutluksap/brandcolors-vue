@@ -11,7 +11,7 @@ const routes = [
     component: Home,
   },
   {
-    path: "/c",
+    path: "/c/:pathMatch(.*)*",
     redirect: "/",
   },
   {
@@ -20,6 +20,10 @@ const routes = [
   },
   {
     path: "/b",
+    redirect: "/",
+  },
+  {
+    path: "/:pathMatch(.*)*",
     redirect: "/",
   },
 ];

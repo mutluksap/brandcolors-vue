@@ -30,6 +30,9 @@ const store = createStore({
     removeAllSelectedColors(state) {
       state.selectedColors = [];
     },
+    removeAllSelectedColorsSlug(state) {
+      state.selectedColorsSlug = [];
+    },
     addSelectedColorsSlug(state, slug) {
       state.selectedColorsSlug.push(slug);
     },

@@ -1,6 +1,6 @@
 <template>
   <div class="filter">
-    <div v-if="$route.params.color" class="search-bar">
+    <div v-if="$route.params.color || $route.params.colors" class="search-bar">
       <i @click="goBack" class="fas fa-arrow-left"></i>
       <span>All Brands</span>
     </div>
@@ -10,9 +10,7 @@
     </div>
     <div class="collections">
       <div
-        v-if="
-          $store.getters.getSelectedColors.length !== 1 || !$route.params.color
-        "
+        v-if="!$route.params.color && !$route.params.colors"
         class="download-collections"
       >
         <ul :class="{ active: getSelectedColors.length > 0 }">
@@ -64,6 +62,7 @@ export default {
     },
     removeAllSelectedColors() {
       this.$store.commit("removeAllSelectedColors");
+      this.$store.commit("removeAllSelectedColorsSlug");
       let color = document.querySelectorAll(".color.active");
       color.forEach((el) => {
         el.classList.remove("active");
@@ -74,7 +73,7 @@ export default {
       if (this.$store.getters.getSelectedColors.length > 0) {
         prompt(
           "Here's the URL to share",
-          "https://localhost:8080/" +
+          "http://localhost:8080/b/" +
             this.$store.getters.getSelectedColorsSlug.join()
         );
       }
